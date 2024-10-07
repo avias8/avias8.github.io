@@ -1,0 +1,45 @@
+.tech-stack {
+  background-color: #f5f5f5; /* Light gray background */
+  padding: 20px; /* Padding around the tech stack */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.tech-stack h2 {
+  margin-top: 0; /* Remove top margin */
+  text-align: center; /* Center the heading */
+  color: #282c34; /* Dark text color */
+}
+
+.tech-list {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0; /* Remove padding */
+  display: flex; /* Use flexbox for layout */
+  flex-wrap: wrap; /* Allow items to wrap */
+  justify-content: center; /* Center items */
+}
+
+.tech-item {
+  background-color: #4a90e2; /* Change to a cooler blue color */
+  color: white; /* White text color */
+  border-radius: 8px; /* Rounded corners */
+  padding: 10px 15px; /* Padding for items */
+  margin: 10px; /* Space between items */
+  display: flex; /* Use flexbox for item layout */
+  align-items: center; /* Center items vertically */
+  transition: transform 0.2s, background-color 0.2s; /* Smooth hover effect */
+}
+
+.tech-item:hover {
+  transform: scale(1.05); /* Scale up on hover */
+  background-color: #357ab8; /* Darker blue on hover */
+}
+
+.tech-icon {
+  margin-right: 8px; /* Space between icon and text */
+  font-size: 24px; /* Increase icon size */
+}
+
+.tech-name {
+  font-weight: bold; /* Bold text for technology names */
+}

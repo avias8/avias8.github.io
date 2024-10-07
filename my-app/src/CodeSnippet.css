@@ -1,0 +1,16 @@
+.code-snippet {
+  background-color: #282c34; /* Dark background for code snippet */
+  color: white; /* White text color */
+  padding: 20px; /* Padding around the snippet */
+  border-radius: 10px; /* Rounded corners */
+  overflow-x: auto; /* Allow horizontal scrolling */
+}
+
+.code-snippet h2 {
+  margin-top: 0; /* Remove top margin */
+}
+
+pre {
+  white-space: pre-wrap; /* Wrap long lines */
+  word-wrap: break-word; /* Break long words */
+}
