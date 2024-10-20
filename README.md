@@ -1,4 +1,6 @@
 Welcome to my repository. 
+Source control seems to be working great here!
+Shoutout to my slime, github pages. And my day one, Google Cloud Run.
 
 # Getting Started with Create React App
 
