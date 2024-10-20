@@ -1,45 +1,110 @@
 #education {
     padding: 20px;
     background-color: #f9f9f9;
-  }
-  
-  .education-container {
+}
+
+.education-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-  }
-  
-  .education-card {
+}
+
+.education-card {
+    position: relative;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 8px;
     overflow: hidden;
-    width: 300px;
+    width: 280px; /* Fixed width */
+    height: 300px; /* Increased card height for larger logos */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .education-logo {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-  }
-  
-  .education-content {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo container with increased height for larger logos */
+.education-logo-container {
+    height: 150px; /* Increased height for larger logos */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px; /* Increased padding for breathing space */
+}
+
+.education-logo {
+    width: auto;
+    height: 100%; /* Allow the logo to take up the full height while maintaining aspect ratio */
+    max-width: 100%; /* Ensure logos do not overflow horizontally */
+    object-fit: contain; /* Maintain aspect ratio */
+}
+
+.education-content {
     padding: 15px;
-  }
-  
-  .education-content h3 {
-    margin: 0 0 10px;
+    text-align: center; /* Center the text under the logo */
+}
+
+.education-content h3 {
+    margin: 10px 0 5px; /* Adds space around the title */
     font-size: 1.2em;
-  }
-  
-  .education-content p {
+}
+
+.education-content p {
     margin: 0;
     color: #666;
-  }
+}
 
-  .education-card:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transform: translateY(-10px);
-    transition: all 0.3s ease;
-  }
+/* Preview section for hover */
+.education-preview {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.education-card:hover .education-preview {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
