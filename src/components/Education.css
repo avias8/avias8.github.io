@@ -3,20 +3,24 @@
     background-color: #f9f9f9;
 }
 
+/* Flexbox container that wraps the cards */
 .education-container {
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    flex-wrap: wrap; /* Allows cards to wrap onto new lines */
+    gap: 20px; /* Space between cards */
+    justify-content: space-between; /* Distributes space evenly between cards */
 }
 
+/* Cards grow/shrink based on available space */
 .education-card {
     position: relative;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 8px;
     overflow: hidden;
-    width: 280px; /* Fixed width */
-    height: 300px; /* Increased card height for larger logos */
+    flex: 1 1 calc(25% - 20px); /* Take 25% of the space, with a gap */
+    min-width: 250px; /* Ensure a minimum width */
+    height: 400px; /* Fixed height */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -27,29 +31,28 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Logo container with increased height for larger logos */
 .education-logo-container {
-    height: 150px; /* Increased height for larger logos */
+    height: 200px; /* Adjust height to allow for larger logos */
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px; /* Increased padding for breathing space */
+    padding: 20px;
 }
 
 .education-logo {
-    width: auto;
-    height: 100%; /* Allow the logo to take up the full height while maintaining aspect ratio */
-    max-width: 100%; /* Ensure logos do not overflow horizontally */
+    max-height: 100%; /* Allow logo to take up full height of the container */
+    max-width: 100%; /* Ensure logos don't overflow horizontally */
     object-fit: contain; /* Maintain aspect ratio */
+    padding: 10px; /* Add padding to ensure breathing space around the logo */
 }
 
 .education-content {
     padding: 15px;
-    text-align: center; /* Center the text under the logo */
+    text-align: center;
 }
 
 .education-content h3 {
-    margin: 10px 0 5px; /* Adds space around the title */
+    margin: 10px 0 5px;
     font-size: 1.2em;
 }
 

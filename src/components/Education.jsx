@@ -14,9 +14,15 @@ const Education = () => {
             logo: westwoodLogo,
             alt: 'Westwood High School Logo',
             institution: 'Westwood Community High School',
-            details: 'High School Diploma',
-            courses: ['Course 7', 'Course 8'],
-            projects: ['Project G', 'Project H'],
+            details: 'High School Diploma | 2013 - 2016',
+            courses: ['Model UN', 'Project Kenya', 'Student Council', 'Junior Achievement (JA)'],
+            projects: [
+                'Model UN: Participated in national assemblies, promoted globally focused discussions within the school.',
+                'Project Kenya: Worked on raising funds to build schools in Kenya.',
+                'Student Council: Actively involved in leadership roles to represent student voices.',
+                'Junior Achievement (JA): Co-founded "Clarity," a company that developed and sold a screen cleaning solution.'
+            ],
+            link: 'https://westwood.fmpsdschools.ca/',
         },
         {
             logo: utLogo,
@@ -41,6 +47,7 @@ const Education = () => {
             details: 'Applied Data Science and Machine Learning',
             courses: ['Course 3', 'Course 4'],
             projects: ['Project C', 'Project D'],
+            apiLink: 'https://beta.openai.com/docs/', // Adding the OpenAI API link here
         },
     ];
 
@@ -82,18 +89,32 @@ const Education = () => {
                         <span className="close-button" onClick={closeModal}>&times;</span>
                         <h3>{selectedEducation.institution}</h3>
                         <p>{selectedEducation.details}</p>
-                        <h4>Courses:</h4>
+                        {selectedEducation.link && (
+                            <p>
+                                <a href={selectedEducation.link} target="_blank" rel="noopener noreferrer">
+                                    Visit School Website
+                                </a>
+                            </p>
+                        )}
+                        <h4>Courses/Activities:</h4>
                         <ul>
                             {selectedEducation.courses.map((course, idx) => (
                                 <li key={idx}>{course}</li>
                             ))}
                         </ul>
-                        <h4>Projects:</h4>
+                        <h4>Projects/Involvements:</h4>
                         <ul>
                             {selectedEducation.projects.map((project, idx) => (
                                 <li key={idx}>{project}</li>
                             ))}
                         </ul>
+                        {selectedEducation.apiLink && (
+                            <p>
+                                <a href={selectedEducation.apiLink} target="_blank" rel="noopener noreferrer">
+                                    Explore OpenAI API Documentation
+                                </a>
+                            </p>
+                        )}
                     </div>
                 </div>
             )}

@@ -1,0 +1,81 @@
+/* Header Container */
+.header {
+  background-color: #333;
+  padding: 15px 20px; /* Added padding for a better layout */
+  color: white;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Header content - aligns logo and navbar */
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+/* Logo container */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 50px; /* Placeholder image size */
+  height: 50px;
+  margin-right: 15px; /* Spacing between logo and text */
+}
+
+.logo h1 {
+  margin: 0;
+  font-size: 1.8em;
+}
+
+.logo p {
+  margin: 0;
+  font-size: 1em;
+  color: #ddd;
+}
+
+/* Navigation Bar Styling */
+.navbar {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  padding-right: 20px; /* Added padding for the right edge */
+}
+
+.navbar-links li {
+  display: inline;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.1em;
+  padding: 10px 15px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.navbar-links a:hover {
+  background-color: #555;
+  border-radius: 5px;
+}
+
+/* Active link styling */
+.active a {
+  background-color: #555;
+  border-radius: 5px;
+  color: #f1f1f1;
+  font-weight: bold;
+}

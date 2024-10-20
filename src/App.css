@@ -1,38 +1,85 @@
+/* Ensure the entire page content doesn't overflow the viewport */
 body {
-  font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f0f0f0;
-  color: #333;
+  box-sizing: border-box;
+  max-width: 100vw; /* Prevent content from overflowing horizontally */
+  overflow-x: hidden; /* Hide any potential horizontal overflow */
 }
 
+/* Set the overall layout to a full screen width */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%; /* Set the width to 100% of the screen */
+  max-width: 100vw; /* Ensure content fits within the viewport */
+  margin: 0 auto; /* Center the content */
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Hide horizontal overflow in .App */
+}
+
+/* Header styles */
 header {
   text-align: center;
   padding: 50px;
   background-color: #282c34;
   color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  max-width: 100vw; /* Prevent header from overflowing horizontally */
+  overflow-x: hidden;
 }
 
+/* Header title */
 header h1 {
   margin: 0;
   font-size: 3em;
 }
 
+/* Navigation links */
 header nav a {
   margin: 0 10px;
   color: #61dafb;
   text-decoration: none;
 }
 
+/* Content area */
 section {
   padding: 50px;
+  flex: 1;
+  overflow: auto;
+  max-width: 100vw; /* Prevent overflow */
+  box-sizing: border-box;
 }
 
+/* Section headers */
 h2 {
   text-align: center;
   color: #282c34;
 }
 
+/* General anchor tag styling */
 a {
   color: #61dafb;
+}
+
+/* Resume page styling */
+.resume-page {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 100px); /* Adjust height to account for header */
+  max-width: 100vw; /* Prevent horizontal overflow */
+  overflow-x: hidden; /* Ensure no overflow */
+}
+
+.resume-page iframe {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  border: none;
+  max-width: 100%; /* Ensure the iframe doesn't overflow horizontally */
+  box-sizing: border-box;
 }
