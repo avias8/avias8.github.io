@@ -113,8 +113,8 @@ const Education = () => {
             "logo": mitLogo,
             "alt": "MIT Logo",
             "institution": "Massachusetts Institute of Technology",
-            "details": "MIT-PE: Applied Data Science and Machine Learning",
-            "duration": "Completed: July 2024",
+            "details": "Applied Data Science and Machine Learning",
+            "duration": "Completed: October 2024",
             "courses": [
                 "Introduction to Data Science and AI",
                 "Python and Statistics Foundations",

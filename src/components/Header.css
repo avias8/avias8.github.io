@@ -141,6 +141,14 @@
   background-color: rgba(255, 255, 255, 0.15);
 }
 
+/* Ensure submenu stays open when hovering over either the parent or the submenu */
+.navbar-links li:hover .submenu,
+.submenu:hover {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
 /* Show submenu on hover */
 .navbar-links li:hover .submenu {
   display: block;
