@@ -1,10 +1,10 @@
-/* Ensure the entire page content doesn't overflow the viewport */
+/* General body styling */
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  max-width: 100vw; /* Prevent content from overflowing horizontally */
-  overflow-x: hidden; /* Hide any potential horizontal overflow */
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 /* Set the overall layout to a full screen width */
@@ -12,12 +12,12 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  width: 100%; /* Set the width to 100% of the screen */
-  max-width: 100vw; /* Ensure content fits within the viewport */
-  margin: 0 auto; /* Center the content */
+  width: 100%;
+  max-width: 100vw;
+  margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
-  overflow-x: hidden; /* Hide horizontal overflow in .App */
+  overflow-x: hidden;
 }
 
 /* Header styles */
@@ -29,7 +29,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  max-width: 100vw; /* Prevent header from overflowing horizontally */
+  max-width: 100vw;
   overflow-x: hidden;
 }
 
@@ -47,11 +47,10 @@ header nav a {
 }
 
 /* Content area */
-section {
-  padding: 50px;
+.content {
   flex: 1;
-  overflow: auto;
-  max-width: 100vw; /* Prevent overflow */
+  width: 100%;
+  max-width: 100vw;
   box-sizing: border-box;
 }
 
@@ -66,13 +65,31 @@ a {
   color: #61dafb;
 }
 
+/* Malaria inference page styling */
+.malaria-inference-page {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 100px); /* Adjust height to account for the header */
+  max-width: 100vw; /* Prevent horizontal overflow */
+  overflow-x: hidden;
+}
+
+.malaria-inference-page iframe {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  border: none;
+  max-width: 100%; /* Ensure the iframe doesn't overflow horizontally */
+  box-sizing: border-box;
+}
+
 /* Resume page styling */
 .resume-page {
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 100px); /* Adjust height to account for header */
-  max-width: 100vw; /* Prevent horizontal overflow */
-  overflow-x: hidden; /* Ensure no overflow */
+  height: calc(100vh - 100px); /* Adjust height to account for the header */
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 .resume-page iframe {
@@ -80,6 +97,6 @@ a {
   width: 100%;
   height: 100%;
   border: none;
-  max-width: 100%; /* Ensure the iframe doesn't overflow horizontally */
+  max-width: 100%;
   box-sizing: border-box;
 }

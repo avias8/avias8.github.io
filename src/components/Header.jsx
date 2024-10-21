@@ -25,7 +25,9 @@ const Header = () => {
             <li className={location.pathname === '/resume' ? 'active' : ''}>
               <Link to="/resume">Resume</Link>
             </li>
-            {/* Add more navigational links if needed */}
+            <li className={location.pathname === '/malaria-inference' ? 'active' : ''}>
+              <Link to="/malaria-inference">Malaria Inference</Link>
+            </li>
           </ul>
         </nav>
       </div>

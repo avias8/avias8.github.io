@@ -20,6 +20,16 @@ const ResumePage = () => (
   </div>
 );
 
+const MalariaInferencePage = () => (
+  <div className="malaria-inference-page">
+    <iframe 
+      src="https://avias8.github.io/malaria-inference-frontend/" 
+      title="Malaria Inference" 
+      style={{ width: '100%', height: '100%', border: 'none' }} 
+    />
+  </div>
+);
+
 function App() {
   return (
     <Router>
@@ -39,6 +49,7 @@ function App() {
             } />
             <Route path="/openai-test" element={<OpenAITestPage />} />
             <Route path="/resume" element={<ResumePage />} /> {/* Resume route */}
+            <Route path="/malaria-inference" element={<MalariaInferencePage />} /> {/* Malaria inference route */}
           </Routes>
         </div>
       </div>
