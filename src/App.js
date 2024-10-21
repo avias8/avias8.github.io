@@ -14,7 +14,7 @@ const ResumePage = () => (
   <div className="resume-page-container">
     <div className="resume-iframe-wrapper">
       <iframe 
-        src="https://avias8.github.io/avivarma/" 
+        src="https://www.avivarma.ca/resume/" 
         title="Avi Varma Resume" 
         className="resume-iframe"
       />
