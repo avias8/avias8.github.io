@@ -14,7 +14,7 @@ const Header = () => {
     <header className="header glassy">
       <div className="header-content">
         <div className="logo">
-          <img src="https://via.placeholder.com/150" alt="Logo" />
+          <img src="logo512.png" alt="Logo" />
         </div>
 
         <button className="mobile-menu-toggle" onClick={toggleMobileMenu} aria-label="Toggle mobile navigation">

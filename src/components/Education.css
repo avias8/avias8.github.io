@@ -6,14 +6,14 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-/* Flexbox container that wraps the cards */
+/* Grid container for wrapping the cards */
 .education-container {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Default to 4 cards side by side */
     gap: 20px; /* Space between cards */
-    justify-content: space-between; /* Distributes space evenly between cards */
-    max-width: 1440px; /* Increased max width for better flexibility */
+    max-width: 1280px; /* Limit maximum width for better scaling */
     margin: 0 auto; /* Center the container */
+    padding: 20px;
 }
 
 /* Cards grow/shrink based on available space */
@@ -23,9 +23,7 @@
     border: 1px solid #ccc;
     border-radius: 8px;
     overflow: hidden;
-    flex: 1 1 calc(25% - 20px); /* Take 25% of the space, with a gap */
     min-width: 250px; /* Ensure a minimum width */
-    max-width: 350px; /* Increased max-width for more flexibility */
     height: 400px; /* Fixed height */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
@@ -208,15 +206,18 @@
 }
 
 /* Responsive Design */
+
+/* 2 cards side by side on smaller screens */
+@media (max-width: 1024px) {
+    .education-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    }
+}
+
+/* 1 card on very small screens */
 @media (max-width: 768px) {
     .education-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .education-card {
-        min-width: 100%; /* Ensure cards fill full width on smaller screens */
-        height: auto; /* Allow card height to adjust */
+        grid-template-columns: 1fr; /* 1 column */
     }
 
     .education-logo-container {
