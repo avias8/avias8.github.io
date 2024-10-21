@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import './OpenAITest.css';
 
 const OpenAITest = () => {
   const [prompt, setPrompt] = useState('');
-  const [response, setResponse] = useState('');
+  const [chatLog, setChatLog] = useState([]);
 
   const handleGenerateText = async () => {
     if (!prompt) {
@@ -10,43 +11,50 @@ const OpenAITest = () => {
       return;
     }
 
-    const eventSource = new EventSource('http://localhost:9001/generate-text');
+    // Add the user's prompt to the chat log
+    setChatLog((prevChatLog) => [...prevChatLog, { sender: 'user', text: prompt }]);
 
-    eventSource.onopen = () => {
-      console.log('Connection to server opened.');
-    };
+    try {
+      const response = await fetch('http://localhost:9001/openai', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ prompt }),
+      });
 
-    eventSource.onmessage = (event) => {
-      const data = JSON.parse(event.data);
-      setResponse((prevResponse) => prevResponse + data.content); // Append new content to the response
-    };
+      const data = await response.json();
+      // Add the response from OpenAI to the chat log
+      setChatLog((prevChatLog) => [...prevChatLog, { sender: 'openai', text: data.generatedText }]);
+    } catch (error) {
+      console.error('Error generating text:', error);
+      setChatLog((prevChatLog) => [...prevChatLog, { sender: 'error', text: 'Error generating text' }]);
+    }
 
-    eventSource.onerror = (error) => {
-      console.error('Error:', error);
-      eventSource.close();
-    };
-
-    eventSource.addEventListener('complete', () => {
-      console.log('Stream complete');
-      eventSource.close();
-    });
+    // Clear the input field after submission
+    setPrompt('');
   };
 
   return (
-    <div>
-      <h2>Test OpenAI Request</h2>
-      <textarea
-        placeholder="Enter a prompt"
-        value={prompt}
-        onChange={(e) => setPrompt(e.target.value)}
-      />
-      <button onClick={handleGenerateText}>Generate Text</button>
-      {response && (
-        <div>
-          <h3>Response:</h3>
-          <p>{response}</p>
-        </div>
-      )}
+    <div className="openai-test-container">
+      <h2 className="title">Chat with OpenAI</h2>
+      <div className="chat-log">
+        {chatLog.map((message, index) => (
+          <div key={index} className={`chat-message ${message.sender}`}>
+            <p>{message.text}</p>
+          </div>
+        ))}
+      </div>
+      <div className="input-container">
+        <textarea
+          className="openai-textarea"
+          placeholder="Enter a message"
+          value={prompt}
+          onChange={(e) => setPrompt(e.target.value)}
+        />
+      </div>
+      <br></br>
+      <button className="generate-btn" onClick={handleGenerateText}>Send</button>
     </div>
   );
 };
