@@ -1,0 +1,94 @@
+.experience-section {
+    padding: 60px 20px;
+    background-color: #f9f9f9; /* Light background to differentiate from other sections */
+    font-family: 'Montserrat', sans-serif; /* Consistent with the rest of the site */
+}
+
+.experience-title {
+    font-size: 2.4em;
+    text-align: center;
+    color: #333;
+    margin-bottom: 40px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Flex container for experience cards */
+.experience-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Card styling for each experience item */
+.experience-card {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    width: calc(45% - 20px); /* Make each card take about half the container */
+    min-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    text-align: left;
+}
+
+.experience-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.experience-card h3 {
+    font-size: 1.8em;
+    color: #666; /* Feature color */
+    margin-bottom: 10px;
+}
+
+.experience-duration {
+    font-size: 0.9em;
+    color: #999; /* Light grey to provide contrast with the rest of the text */
+    margin-bottom: 10px;
+}
+
+.experience-description {
+    color: #444;
+    line-height: 1.6;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+.experience-responsibilities {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.experience-responsibilities li {
+    color: #444;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.technologies {
+    font-size: 0.9em;
+    color: #666; /* Feature color */
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .experience-container {
+        flex-direction: column;
+        align-items: center; /* Center cards on smaller screens */
+    }
+
+    .experience-card {
+        width: 90%; /* Take up most of the width on smaller screens */
+        margin-bottom: 20px; /* Space between cards */
+    }
+}

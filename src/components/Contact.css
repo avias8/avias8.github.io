@@ -1,0 +1,124 @@
+.contact-section {
+    padding: 60px 20px;
+    background-color: #f4f4f4; /* Light grey background for contrast */
+    font-family: 'Montserrat', sans-serif; /* Modern and stylish font */
+}
+
+.contact-title {
+    font-size: 2.4em;
+    text-align: center;
+    color: #333;
+    margin-bottom: 40px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Flex container for contact information and form */
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Contact Information Styling */
+.contact-info {
+    flex: 1;
+    min-width: 280px;
+    max-width: 500px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.contact-icon {
+    font-size: 1.6em;
+    color: #666; /* Feature color for contact icons */
+    margin-right: 15px;
+}
+
+.contact-item p, .contact-item a {
+    font-size: 1.1em;
+    color: #444;
+    text-decoration: none;
+}
+
+.contact-item a:hover {
+    color: #1a73e8; /* Blue color for hover effect on links */
+    text-decoration: underline;
+}
+
+/* Contact Form Styling */
+.contact-form {
+    flex: 1;
+    min-width: 280px;
+    max-width: 500px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form label {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.contact-form input, .contact-form textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: #1a73e8;
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: vertical; /* Allow resizing vertically only */
+}
+
+.contact-submit-button {
+    background-color: #666; /* Feature color for button */
+    color: #ffffff;
+    padding: 12px 20px;
+    font-size: 1.1em;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-submit-button:hover {
+    background-color: #444; /* Darker shade on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center; /* Center contact information and form on smaller screens */
+    }
+
+    .contact-info, .contact-form {
+        width: 90%; /* Full width for smaller screens */
+        margin-bottom: 20px;
+    }
+}
