@@ -172,7 +172,6 @@
 
   .navbar {
     display: none;
-    flex-direction: column;
     gap: 10px;
     background: rgba(25, 25, 35, 0.9);
     position: fixed;
@@ -190,7 +189,7 @@
   }
 
   .header-content {
-    flex-direction: column;
+    flex-direction: horizontal;
     align-items: center;
   }
 
@@ -208,7 +207,6 @@
   }
 
   .navbar-links {
-    flex-direction: column;
     gap: 15px; /* More space between items for easier tapping */
   }
 }

@@ -3,15 +3,17 @@
 #education {
     padding: 20px;
     background-color: #f9f9f9;
-    font-family: 'Montserrat', sans-serif; /* Modern and stylish font */
+    font-family: 'Montserrat', sans-serif;
 }
 
-/* Flexbox container that wraps the cards */
+/* Grid container for wrapping the cards */
 .education-container {
-    display: flex;
-    flex-wrap: wrap; /* Allows cards to wrap onto new lines */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Default to 4 cards side by side */
     gap: 20px; /* Space between cards */
-    justify-content: space-between; /* Distributes space evenly between cards */
+    max-width: 1280px; /* Limit maximum width for better scaling */
+    margin: 0 auto; /* Center the container */
+    padding: 20px;
 }
 
 /* Cards grow/shrink based on available space */
@@ -21,12 +23,14 @@
     border: 1px solid #ccc;
     border-radius: 8px;
     overflow: hidden;
-    flex: 1 1 calc(25% - 20px); /* Take 25% of the space, with a gap */
     min-width: 250px; /* Ensure a minimum width */
     height: 400px; /* Fixed height */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensure even spacing inside the card */
 }
 
 .education-card:hover {
@@ -34,8 +38,9 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+/* Ensures logos scale well within the cards */
 .education-logo-container {
-    height: 200px; /* Adjust height to allow for larger logos */
+    height: 200px; /* Fixed height to allow for logo scaling */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,6 +58,7 @@
     padding: 15px;
     text-align: center;
     font-family: 'Montserrat', sans-serif; /* Apply the font to content */
+    flex-grow: 1; /* Allow content to fill available space */
 }
 
 .education-content h3 {
@@ -109,7 +115,7 @@
     padding: 40px;
     border-radius: 15px;
     width: 90%;
-    max-width: 800px;
+    max-width: 800px; /* Ensure the modal is not too wide */
     max-height: 90vh; /* Make sure modal is not taller than the viewport */
     overflow-y: auto; /* Add scroll for the content if it exceeds the height */
     position: relative;
@@ -197,4 +203,35 @@
 .modal-content a:hover {
     color: #333;
     border-bottom: 2px solid #333; /* Adds a subtle underline effect */
+}
+
+/* Responsive Design */
+
+/* 2 cards side by side on smaller screens */
+@media (max-width: 1024px) {
+    .education-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    }
+}
+
+/* 1 card on very small screens */
+@media (max-width: 768px) {
+    .education-container {
+        grid-template-columns: 1fr; /* 1 column */
+    }
+
+    .education-logo-container {
+        height: 150px; /* Adjust logo container height for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        padding: 20px; /* Reduce modal padding on very small screens */
+        max-width: 95%; /* Adjust modal width for very small screens */
+    }
+
+    .modal-content h3 {
+        font-size: 1.6em; /* Adjust modal heading font size for small screens */
+    }
 }

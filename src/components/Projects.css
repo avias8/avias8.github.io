@@ -94,8 +94,7 @@
 
 /* Adding space between the slides */
 .slick-slide {
-    padding-right: 40px; /* Use padding instead of margin */
-    margin-bottom: 20px; /* Add margin to the bottom */
+    padding: 0 20px;
     box-sizing: border-box; /* Ensure padding doesn't affect width calculation */
     width: 100%; /* Ensure full-width */
 }
@@ -103,7 +102,9 @@
 /* For smaller screens */
 @media (max-width: 1024px) {
     .slick-slide {
-        margin: 0 10px;
+        padding: 0 20px;
+        box-sizing: border-box; /* Ensure padding doesn't affect width calculation */
+        width: 100%; /* Ensure full-width */
     }
 }
 
