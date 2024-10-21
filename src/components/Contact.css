@@ -13,7 +13,7 @@
     letter-spacing: 1px;
 }
 
-/* Flex container for contact information and form */
+/* Flex container for contact information and map */
 .contact-container {
     display: flex;
     flex-wrap: wrap;
@@ -53,71 +53,26 @@
     text-decoration: underline;
 }
 
-/* Contact Form Styling */
-.contact-form {
+/* Google Maps Embed Styling */
+.map-container {
     flex: 1;
     min-width: 280px;
     max-width: 500px;
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
+    height: 450px; /* Increase the height to match the iframe */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-.contact-form form {
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-form label {
-    font-size: 1.1em;
-    color: #666;
-    margin-bottom: 5px;
-}
-
-.contact-form input, .contact-form textarea {
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1em;
-    transition: border-color 0.3s ease;
-}
-
-.contact-form input:focus, .contact-form textarea:focus {
-    border-color: #1a73e8;
-}
-
-.contact-form textarea {
-    height: 150px;
-    resize: vertical; /* Allow resizing vertically only */
-}
-
-.contact-submit-button {
-    background-color: #666; /* Feature color for button */
-    color: #ffffff;
-    padding: 12px 20px;
-    font-size: 1.1em;
-    font-weight: 600;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-submit-button:hover {
-    background-color: #444; /* Darker shade on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
 }
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
     .contact-container {
         flex-direction: column;
-        align-items: center; /* Center contact information and form on smaller screens */
+        align-items: center; /* Center contact information and map on smaller screens */
     }
 
-    .contact-info, .contact-form {
+    .contact-info, .map-container {
         width: 90%; /* Full width for smaller screens */
         margin-bottom: 20px;
     }
