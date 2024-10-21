@@ -138,3 +138,36 @@
         font-size: 1rem;
     }
 }
+
+/* Status orb for API status */
+.status-orb {
+    position: fixed;
+    top: 8rem;
+    right: 1rem;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #ccc;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.status-orb.online {
+    background-color: #4caf50; /* Green for online */
+    box-shadow: 0 0 20px #4caf50; /* Green glow */
+}
+
+.status-orb.offline {
+    background-color: #f44336; /* Red for offline */
+    box-shadow: 0 0 20px #f44336; /* Red glow */
+}
+
+.status-orb.checking {
+    background-color: #ffeb3b; /* Yellow for checking */
+    box-shadow: 0 0 20px #ffeb3b; /* Yellow glow */
+}
+
+.status-orb:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s;
+}

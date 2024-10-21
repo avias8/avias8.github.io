@@ -2,7 +2,6 @@
 .glassy {
   background: rgba(20, 20, 30, 0.9); /* Darker background to match submenu */
   border: none; /* Removing border for a consistent look with submenu */
-  border-radius: 8px; /* Adding border radius for matching appearance */
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); /* Similar shadow as submenu for depth */
   padding: 10px; /* Adjust padding to match submenu */
   position: sticky;
@@ -106,20 +105,6 @@
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
-}
-
-/* Add an SVG Chevron Indicator to Submenu */
-.submenu::before {
-  content: '';
-  position: absolute;
-  top: 0px; /* Adjust to position above submenu */
-  left: 25px; /* Adjust to align centrally with the parent link */
-  width: 12px;
-  height: 12px;
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 14l-8-8h16z"/></svg>'); /* Downward chevron SVG */
-  background-size: cover;
-  z-index: 9999;
-  padding: 5px; /* Adding padding around for a more spacious look */
 }
 
 /* Submenu list items */

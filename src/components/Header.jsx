@@ -51,15 +51,30 @@ const Header = () => {
         <nav className={`navbar ${isMobileMenuOpen ? 'active' : ''}`}>
           <ul className="navbar-links">
             <li className={location.pathname === '/' ? 'active' : ''}>
-              <Link to="/" onClick={() => setIsMobileMenuOpen(false)}>Home</Link>
-              <ul className="submenu">
-                <li><a href="#about" onClick={() => scrollToSection('about-section')}>About</a></li>
-                <li><a href="#skills" onClick={() => scrollToSection('skills-section')}>Skills</a></li>
-                <li><a href="#projects" onClick={() => scrollToSection('projects-section')}>Projects</a></li>
-                <li><a href="#experience" onClick={() => scrollToSection('experience-section')}>Experience</a></li>
-                <li><a href="#education" onClick={() => scrollToSection('education-section')}>Education</a></li>
-                <li><a href="#contact" onClick={() => scrollToSection('contact-section')}>Contact</a></li>
-              </ul>
+              <Link
+                to="/"
+                onClick={() => {
+                  if (location.pathname !== '/') {
+                    // If on another page, just navigate to home and close the menu
+                    setIsMobileMenuOpen(false);
+                  } else {
+                    // If already on home, keep the current behavior
+                    toggleMobileMenu();
+                  }
+                }}
+              >
+                Home
+              </Link>
+              {location.pathname === '/' && (
+                <ul className="submenu">
+                  <li><a href="#about" onClick={() => scrollToSection('about-section')}>About</a></li>
+                  <li><a href="#skills" onClick={() => scrollToSection('skills-section')}>Skills</a></li>
+                  <li><a href="#projects" onClick={() => scrollToSection('projects-section')}>Projects</a></li>
+                  <li><a href="#experience" onClick={() => scrollToSection('experience-section')}>Experience</a></li>
+                  <li><a href="#education" onClick={() => scrollToSection('education-section')}>Education</a></li>
+                  <li><a href="#contact" onClick={() => scrollToSection('contact-section')}>Contact</a></li>
+                </ul>
+              )}
             </li>
             <li className={location.pathname === '/resume' ? 'active' : ''}>
               <Link to="/resume" onClick={() => setIsMobileMenuOpen(false)}>Resume</Link>
