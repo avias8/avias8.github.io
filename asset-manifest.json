@@ -1,20 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.66d68f1b.css",
-    "main.js": "/static/js/main.ba0c958a.js",
+    "main.css": "/static/css/main.e5e5ded9.css",
+    "main.js": "/static/js/main.f3612fbf.js",
     "static/js/453.1eb5cc81.chunk.js": "/static/js/453.1eb5cc81.chunk.js",
     "static/media/avivarma.jpeg": "/static/media/avivarma.275287bbd791ee3fa061.jpeg",
     "static/media/uoft-logo.svg": "/static/media/uoft-logo.bcc924650d8ffea7ecaa4f97a9d12806.svg",
     "static/media/ubc-logo.png": "/static/media/ubc-logo.38b92b5a17f5e5cb3287.png",
     "static/media/westwood-logo.webp": "/static/media/westwood-logo.56875020ca7791e002af.webp",
+    "static/media/slick.svg": "/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/static/media/slick.c94f7671dcc99dce43e2.ttf",
     "index.html": "/index.html",
+    "static/media/slick.woff": "/static/media/slick.295183786cd8a1389865.woff",
     "static/media/mit-logo.svg": "/static/media/mit-logo.8c41de5d0ccd0609b17ffdbee7417d0d.svg",
-    "main.66d68f1b.css.map": "/static/css/main.66d68f1b.css.map",
-    "main.ba0c958a.js.map": "/static/js/main.ba0c958a.js.map",
+    "main.e5e5ded9.css.map": "/static/css/main.e5e5ded9.css.map",
+    "main.f3612fbf.js.map": "/static/js/main.f3612fbf.js.map",
     "453.1eb5cc81.chunk.js.map": "/static/js/453.1eb5cc81.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.66d68f1b.css",
-    "static/js/main.ba0c958a.js"
+    "static/css/main.e5e5ded9.css",
+    "static/js/main.f3612fbf.js"
   ]
 }
