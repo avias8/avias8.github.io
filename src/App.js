@@ -15,7 +15,7 @@ const ResumePage = () => (
   <div className="resume-page-container">
     <div className="resume-iframe-wrapper">
       <iframe 
-        src="https://www.avivarma.ca/resume/" 
+        src="/resume/index.html" 
         title="Avi Varma Resume" 
         className="resume-iframe"
       />
@@ -27,7 +27,7 @@ const MalariaInferencePage = () => (
   <div className="malaria-inference-page-container">
     <div className="malaria-iframe-wrapper">
       <iframe 
-        src="https://avias8.github.io/malaria-inference-frontend/" 
+        src="/malaria-inference-frontend/index.html" 
         title="Malaria Inference" 
         className="malaria-iframe"
       />

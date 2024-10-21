@@ -1,0 +1,3 @@
+[submodule "public/malaria-inference-frontend"]
+	path = public/malaria-inference-frontend
+	url = https://github.com/avias8/malaria-inference-frontend.git
