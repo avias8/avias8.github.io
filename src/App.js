@@ -37,24 +37,27 @@ function App() {
         <Header />
         <div className="content"> {/* Flexbox container for content */}
           <Routes>
-            <Route path="/" element={
-              <>
-                <About />
-                <Skills />
-                <Projects />
-                <Experience />
-                <Education />
-                <Contact />
-              </>
-            } />
+            <Route path="/" element={<HomePage />} />
             <Route path="/openai-test" element={<OpenAITestPage />} />
-            <Route path="/resume" element={<ResumePage />} /> {/* Resume route */}
-            <Route path="/malaria-inference" element={<MalariaInferencePage />} /> {/* Malaria inference route */}
+            <Route path="/resume" element={<ResumePage />} />
+            <Route path="/malaria-inference" element={<MalariaInferencePage />} />
           </Routes>
         </div>
       </div>
     </Router>
   );
 }
+
+// Split HomePage for easier management
+const HomePage = () => (
+  <>
+    <About id="about-section" />
+    <Skills id="skills-section" />
+    <Projects id="projects-section" />
+    <Experience id="experience-section" />
+    <Education id="education-section" />
+    <Contact id="contact-section" />
+  </>
+);
 
 export default App;

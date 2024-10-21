@@ -12,20 +12,36 @@ const About = () => {
                 <div className="about-content">
                     <h1 className="name">Avi Varma</h1>
                     <h2 className="title">Software Engineer specializing in 3D Simulation, Modeling & Data Science</h2>
-                    <p className="contact-info">
-                        Calgary, AB, Canada | (780) 747-3319 | <a href="mailto:HarshvardhanV98@gmail.com">HarshvardhanV98@gmail.com</a>
-                    </p>
-                    <div className="links">
-                        <a href="http://avivarma.ca" target="_blank" rel="noopener noreferrer">avivarma.ca</a> | 
-                        <a href="https://www.linkedin.com/in/YOUR_LINKEDIN_PROFILE" target="_blank" rel="noopener noreferrer"> LinkedIn</a> | 
-                        <a href="https://github.com/YOUR_GITHUB_PROFILE" target="_blank" rel="noopener noreferrer"> GitHub</a>
+                    <div className="contact-info">
+                        <p className="contact-item">
+                            <span className="contact-icon">📍</span> Calgary, AB, Canada
+                        </p>
+                        <p className="contact-item">
+                            <span className="contact-icon">📞</span> (780) 747-3319
+                        </p>
+                        <p className="contact-item">
+                            <span className="contact-icon">✉️</span> <a href="mailto:HarshvardhanV98@gmail.com">HarshvardhanV98@gmail.com</a>
+                        </p>
                     </div>
-                    <p className="about-description">
-                        Hi, I'm Avi! I'm a software engineer with a background in mechanical engineering. 
-                        I have extensive experience in building full-stack applications, VR/AR apps, and machine learning projects. 
-                        I’m passionate about creating cutting-edge solutions that push the boundaries of both engineering and software development, 
-                        connecting the digital world to the real one.
-                    </p>
+                    <div className="links">
+                        <a href="http://avivarma.ca" target="_blank" rel="noopener noreferrer">avivarma.ca</a>
+                        <a href="https://www.linkedin.com/in/avivarma/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                        <a href="https://github.com/avias8" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    </div>
+                    <div className="about-description">
+                        <p>
+                            Hi, I'm <strong>Avi Varma</strong>, a passionate Software Engineer with a background in <strong>Mechanical Engineering</strong>. With a love for blending engineering principles with cutting-edge technology, I've built expertise in <strong>3D Simulation</strong>, <strong>Modeling</strong>, and <strong>Data Science</strong>. 
+                        </p>
+                        <p>
+                            My journey has taken me from working on VR/AR applications that create immersive experiences, to full-stack development projects that provide robust, real-world solutions. I launched my own VR game—<strong>Crazy Golf VR</strong>—which has reached over 18,000 installs, showing my dedication to innovative and impactful projects.
+                        </p>
+                        <p>
+                            Currently, I'm focused on combining my experience in software engineering with data-driven insights to build <strong>scalable</strong> and <strong>intelligent systems</strong>. I’m particularly fascinated by leveraging AI and machine learning to solve complex, real-world problems.
+                        </p>
+                        <p>
+                            I believe in constantly pushing boundaries and learning new skills. Whether it’s diving into advanced data science techniques or creating tools for interactive 3D environments, I strive to keep improving and making meaningful contributions to the industry.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>

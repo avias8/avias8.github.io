@@ -1,14 +1,17 @@
-/* Header Container */
-.header {
-  background-color: #333;
-  padding: 15px 20px;
-  color: white;
+/* Updated Header Style to Match Submenu */
+.glassy {
+  background: rgba(20, 20, 30, 0.9); /* Darker background to match submenu */
+  border: none; /* Removing border for a consistent look with submenu */
+  border-radius: 8px; /* Adding border radius for matching appearance */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); /* Similar shadow as submenu for depth */
+  padding: 10px; /* Adjust padding to match submenu */
   position: sticky;
   top: 0;
   width: 100%;
   z-index: 1000;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Added shadow for depth */
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
 }
+
 
 /* Header content - aligns logo and navbar */
 .header-content {
@@ -19,27 +22,16 @@
 }
 
 /* Logo container */
-.logo {
-  display: flex;
-  align-items: center;
-}
-
 .logo img {
-  width: 50px;
-  height: 50px;
-  margin-right: 15px; /* Space between logo and text */
+  width: 60px;
+  height: 60px;
+  transition: transform 0.3s ease;
+  border-radius: 50%; /* Optional, gives a circular logo effect */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2); /* Glowing effect */
 }
 
-.logo h1 {
-  margin: 0;
-  font-size: 1.8em;
-  color: #f1f1f1;
-}
-
-.logo p {
-  margin: 0;
-  font-size: 1em;
-  color: #ccc;
+.logo img:hover {
+  transform: scale(1.1);
 }
 
 /* Navigation Bar Styling */
@@ -48,47 +40,176 @@
   align-items: center;
 }
 
+/* Navigation Bar Links - Sleeker Styling */
 .navbar-links {
   list-style-type: none;
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 20px;
+  gap: 25px;
+  position: relative;
 }
 
 .navbar-links li {
-  display: inline;
+  position: relative;
 }
 
 .navbar-links a {
   text-decoration: none;
-  color: white;
-  font-size: 1.1em;
-  padding: 10px 15px;
-  border-radius: 8px; /* Rounded corners */
-  transition: background-color 0.3s ease, color 0.3s ease;
+  color: #ffffff;
+  font-size: 1em;
+  font-family: 'Montserrat', sans-serif; /* Modern and stylish */
+  padding: 8px 0;
+  transition: color 0.3s ease, transform 0.3s ease;
+  position: relative;
+}
+
+/* Hover Effect for Sleek Interaction */
+.navbar-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px; /* Space below the link */
+  width: 0;
+  height: 2px;
+  background: #ffffff; /* White underline effect */
+  transition: width 0.3s ease;
+}
+
+.navbar-links a:hover::after {
+  width: 100%; /* Expand underline on hover */
 }
 
 .navbar-links a:hover {
-  background-color: #555;
-  color: #f1f1f1;
+  color: #00bcd4; /* Slightly different color to highlight */
+  transform: translateY(-2px); /* Lift the link on hover for added effect */
 }
 
-/* Active link styling */
+/* Active Link Styling */
 .active a {
-  background-color: #007bff;
-  border-radius: 8px;
-  color: #fff;
+  color: #00bcd4; /* A different color to indicate the active page */
   font-weight: bold;
 }
+/* Submenu with Indicator */
+.submenu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 10px); /* Add spacing between main item and submenu */
+  left: 0;
+  background-color: rgba(20, 20, 30, 0.9); /* Darker submenu background */
+  padding: 15px 10px; /* Added top padding for spacing and overall padding for content */
+  border-radius: 8px;
+  list-style: none;
+  min-width: 200px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
 
-/* Ensuring that iframe for the resume page fills the height */
-.resume-page iframe {
-  width: 100%;
-  height: calc(100vh - 60px); /* Adjust the height based on the header size */
-  border: none;
+/* Add an SVG Chevron Indicator to Submenu */
+.submenu::before {
+  content: '';
+  position: absolute;
+  top: 0px; /* Adjust to position above submenu */
+  left: 25px; /* Adjust to align centrally with the parent link */
+  width: 12px;
+  height: 12px;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 14l-8-8h16z"/></svg>'); /* Downward chevron SVG */
+  background-size: cover;
+  z-index: 9999;
+  padding: 5px; /* Adding padding around for a more spacious look */
+}
+
+
+/* Submenu list items */
+.submenu li {
+  padding: 5px 0;
+}
+
+/* Submenu links - smaller and consistent styling */
+.submenu li a {
+  color: #ffffff;
+  font-size: 0.9em; /* Reduced font size for a smaller appearance */
+  padding: 8px 10px;
+  border-radius: 4px;
   display: block;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+}
+
+.submenu li a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Show submenu on hover */
+.navbar-links li:hover .submenu {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Padding added to last link ("Malaria Inference") */
+.navbar-links li:last-child a {
+  padding-right: 10px;
+}
+
+/* Mobile Menu Toggle Button */
+.mobile-menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: transparent;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 1100; /* Should be higher than header */
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 768px) {
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .navbar {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background: rgba(25, 25, 35, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .navbar.active {
+    display: flex;
+  }
+
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .submenu {
+    display: none;
+  }
+  
+  .navbar-links li:hover .submenu {
+    display: none; /* Disable submenu on hover for mobile */
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    gap: 15px; /* More space between items for easier tapping */
+  }
 }
