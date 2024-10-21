@@ -1,7 +1,8 @@
+/* Skills Section */
 .skills-section {
     padding: 60px 20px;
     background: linear-gradient(to right, #f3f4f7, #f9f9f9);
-    font-family: 'Montserrat', sans-serif; /* Modern and stylish font */
+    font-family: 'Montserrat', sans-serif;
 }
 
 .skills-title {
@@ -10,7 +11,7 @@
     color: #333;
     margin-bottom: 40px;
     font-weight: 700;
-    letter-spacing: 1px; /* Add letter spacing for visual effect */
+    letter-spacing: 1px;
 }
 
 /* Flexbox container for skill cards */
@@ -21,6 +22,7 @@
     max-width: 1200px;
     margin: 0 auto;
     gap: 40px;
+    padding: 0 20px; /* Add padding to prevent content from touching screen edges */
 }
 
 /* Card styling for each skill category */
@@ -29,11 +31,14 @@
     border-radius: 15px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: calc(33% - 20px); /* Each skill category takes up 1/3 of the container */
+    flex: 1 1 calc(33.33% - 40px); /* Adjust width for responsive layout */
     max-width: 350px;
-    min-width: 250px;
+    min-width: 500px;
+    min-height: 300px; /* Set a minimum height for consistency */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .skill-category:hover {
@@ -43,12 +48,13 @@
 
 .skill-category h3 {
     font-size: 1.6em;
-    color: #666; /* Muted blue for headers */
+    color: #666;
     margin-bottom: 15px;
     display: flex;
     align-items: center;
 }
 
+/* Icon styling */
 .skill-icon {
     font-size: 2em;
     color: #666;
@@ -59,6 +65,7 @@
 .skill-category ul {
     list-style: none;
     padding-left: 0;
+    margin-top: 0;
 }
 
 .skill-category li {
@@ -73,20 +80,34 @@
     content: '•';
     position: absolute;
     left: 0;
-    color: #1a73e8; /* Blue bullet point for better visual distinction */
-    font-size: 1.5em;
+    color: #444; /* Changed bullet point color to match overall theme */
+    font-size: 1.2em;
 }
 
 /* Responsive styling for smaller screens */
+@media (max-width: 1200px) {
+    .skill-category {
+        flex: 1 1 calc(45% - 40px); /* Take up half of the row */
+    }
+}
+
 @media (max-width: 768px) {
     .skills-container {
         flex-direction: column;
-        align-items: center; /* Center cards on smaller screens */
+        align-items: center;
+        gap: 20px; /* Reduced gap for smaller screens */
     }
 
     .skill-category {
-        width: 100%;
+        flex: 1 1 100%; /* Full width on smaller screens */
         max-width: 500px;
         margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .skill-category {
+        padding: 15px;
+        margin-bottom: 15px;
     }
 }

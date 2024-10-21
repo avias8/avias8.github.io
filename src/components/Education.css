@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
 #education {
     padding: 20px;
     background-color: #f9f9f9;
+    font-family: 'Montserrat', sans-serif; /* Modern and stylish font */
 }
 
 /* Flexbox container that wraps the cards */
@@ -49,16 +52,19 @@
 .education-content {
     padding: 15px;
     text-align: center;
+    font-family: 'Montserrat', sans-serif; /* Apply the font to content */
 }
 
 .education-content h3 {
     margin: 10px 0 5px;
     font-size: 1.2em;
+    font-weight: 700; /* Use a bold weight for institution name */
 }
 
 .education-content p {
     margin: 0;
     color: #666;
+    font-weight: 500; /* Medium weight for text clarity */
 }
 
 /* Preview section for hover */
@@ -74,6 +80,7 @@
     transition: transform 0.3s ease;
     opacity: 0;
     visibility: hidden;
+    font-family: 'Montserrat', sans-serif; /* Consistent font */
 }
 
 .education-card:hover .education-preview {
@@ -93,21 +100,101 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 9999; /* Keep it above all other elements */
+    font-family: 'Montserrat', sans-serif; /* Apply font globally in modal */
 }
 
 .modal-content {
     background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    width: 80%;
-    max-width: 600px;
+    padding: 40px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh; /* Make sure modal is not taller than the viewport */
+    overflow-y: auto; /* Add scroll for the content if it exceeds the height */
     position: relative;
+    z-index: 10000;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
 .close-button {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 15px;
+    right: 15px;
     font-size: 1.5em;
     cursor: pointer;
+    z-index: 10001;
+    background: transparent;
+    border: none;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover {
+    color: #333;
+}
+
+/* New Close Button at Bottom */
+.close-modal-bottom {
+    display: block;
+    width: 100%;
+    max-width: 150px;
+    margin: 30px auto 0;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #666; /* Use grey instead of blue */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.close-modal-bottom:hover {
+    background-color: #444; /* Darker grey on hover */
+    transform: scale(1.05);
+}
+
+/* Modal Content Styling */
+.modal-content h3 {
+    font-size: 2em;
+    color: #444; /* Darker grey for header consistency */
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.modal-content h4 {
+    font-size: 1.4em;
+    color: #333;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    border-bottom: 2px solid #666;
+    padding-bottom: 5px;
+}
+
+.modal-content ul {
+    list-style-type: disc;
+    margin: 15px 0 15px 20px;
+}
+
+.modal-content li {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* Styling for the Visit School Website Link */
+.modal-content a {
+    color: #666;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    border-bottom: 2px solid transparent;
+}
+
+.modal-content a:hover {
+    color: #333;
+    border-bottom: 2px solid #333; /* Adds a subtle underline effect */
 }

@@ -11,24 +11,29 @@ import Contact from './components/Contact.jsx';
 import OpenAITestPage from './OpenAITestPage.jsx';
 
 const ResumePage = () => (
-  <div className="resume-page">
-    <iframe 
-      src="https://avias8.github.io/avivarma/" 
-      title="Avi Varma Resume" 
-      style={{ width: '100%', height: '100%', border: 'none' }} 
-    />
+  <div className="resume-page-container">
+    <div className="resume-iframe-wrapper">
+      <iframe 
+        src="https://avias8.github.io/avivarma/" 
+        title="Avi Varma Resume" 
+        className="resume-iframe"
+      />
+    </div>
   </div>
 );
 
 const MalariaInferencePage = () => (
-  <div className="malaria-inference-page">
-    <iframe 
-      src="https://avias8.github.io/malaria-inference-frontend/" 
-      title="Malaria Inference" 
-      style={{ width: '100%', height: '100%', border: 'none' }} 
-    />
+  <div className="malaria-inference-page-container">
+    <div className="malaria-iframe-wrapper">
+      <iframe 
+        src="https://avias8.github.io/malaria-inference-frontend/" 
+        title="Malaria Inference" 
+        className="malaria-iframe"
+      />
+    </div>
   </div>
 );
+
 
 function App() {
   return (

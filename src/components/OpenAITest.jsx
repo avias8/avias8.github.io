@@ -15,7 +15,7 @@ const OpenAITest = () => {
     setChatLog((prevChatLog) => [...prevChatLog, { sender: 'user', text: prompt }]);
 
     try {
-      const response = await fetch('http://localhost:9001/openai', {
+      const response = await fetch('https://chatgpt-express-server-186364516466.us-central1.run.app/openai', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -53,7 +53,7 @@ const OpenAITest = () => {
           onChange={(e) => setPrompt(e.target.value)}
         />
       </div>
-      <br></br>
+      <br />
       <button className="generate-btn" onClick={handleGenerateText}>Send</button>
     </div>
   );

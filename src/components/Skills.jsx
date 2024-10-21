@@ -1,7 +1,6 @@
 import React from 'react';
-import { FaCode, FaCogs, FaRobot, FaVrCardboard, FaDatabase, FaCloud, FaProjectDiagram, FaMicrochip } from 'react-icons/fa'; // Import icons
+import { FaCode, FaCogs, FaRobot, FaVrCardboard, FaDatabase, FaCloud, FaProjectDiagram, FaMicrochip } from 'react-icons/fa';
 import './Skills.css';
-
 
 const Skills = () => {
   return (

@@ -12,7 +12,6 @@
   transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
 }
 
-
 /* Header content - aligns logo and navbar */
 .header-content {
   display: flex;
@@ -90,6 +89,7 @@
   color: #00bcd4; /* A different color to indicate the active page */
   font-weight: bold;
 }
+
 /* Submenu with Indicator */
 .submenu {
   display: none;
@@ -121,7 +121,6 @@
   z-index: 9999;
   padding: 5px; /* Adding padding around for a more spacious look */
 }
-
 
 /* Submenu list items */
 .submenu li {

@@ -1,3 +1,8 @@
+// Server.js
+// This file sets up an Express server that handles requests to the OpenAI API.
+// It includes middleware for CORS and JSON parsing, and defines a single POST endpoint
+// that takes a prompt from the client, sends it to the OpenAI API, and returns the generated text.
+
 const express = require('express');
 const cors = require('cors');
 const { OpenAI } = require('openai');
@@ -27,7 +32,7 @@ app.post('/openai', async (req, res) => {
 
         const chatCompletion = await openai.chat.completions.create({
             messages: [{ role: 'user', content: prompt }], // Use the prompt from the client
-            model: 'gpt-3.5-turbo', // You can replace this with 'gpt-4o-mini' if needed
+            model: 'gpt-4o-mini', // You can replace this with 'gpt-4o-mini' if needed
         });
         res.json({ generatedText: chatCompletion.choices[0].message.content }); // Send back the generated text
     } catch (error) {

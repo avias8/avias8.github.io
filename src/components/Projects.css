@@ -1,7 +1,8 @@
+/* Projects Section */
 .projects-section {
     padding: 60px 20px;
-    background-color: #f9f9f9; /* Light background to differentiate from other sections */
-    font-family: 'Montserrat', sans-serif; /* Modern and stylish font */
+    background-color: #f9f9f9;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .projects-title {
@@ -10,30 +11,45 @@
     color: #333;
     margin-bottom: 40px;
     font-weight: 700;
-    letter-spacing: 1px;
 }
 
-/* Flex container for project cards */
-.projects-container {
+/* Flexbox container for slider */
+.projects-slider-container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 30px;
-    max-width: 1200px;
+    align-items: center;
+    width: 100%; /* Ensure full-width */
     margin: 0 auto;
+    padding: 0;
 }
 
-/* Individual project card styling */
+/* Slider Container */
+.projects-slider {
+    width: 105%;
+}
+
+/* Slick track adjustment */
+.slick-track {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* Individual Project Card Styling */
 .project-card {
     background: linear-gradient(145deg, #ffffff, #e6e6e6);
     border-radius: 15px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    width: calc(45% - 20px); /* Make each card take about half the container */
-    min-width: 300px;
+    padding: 30px; /* Added padding for more breathing room */
+    text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    min-height: 600px; /* Set a consistent height */
+    box-sizing: border-box;
+    margin: 10px; /* Added margin to ensure there's space between cards */
 }
 
 .project-card:hover {
@@ -41,50 +57,58 @@
     box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.2);
 }
 
-.project-card h3 {
-    font-size: 1.8em;
-    color: #666; /* Muted blue for project titles */
-    margin-bottom: 10px;
+/* Project Image Styling */
+.project-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.project-card p {
-    color: #444;
-    line-height: 1.6;
-    font-size: 1.1em;
-    margin-bottom: 15px;
-}
-
+/* Technologies used in each project */
 .technologies {
     font-size: 0.9em;
     color: #666;
     margin-bottom: 20px;
 }
 
+/* Link Styling */
 .project-link {
     text-decoration: none;
     color: #ffffff;
     background-color: #666;
-    padding: 10px 15px;
+    padding: 12px 18px;
     border-radius: 8px;
     font-weight: 600;
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
     display: inline-block;
+    margin-top: auto;
 }
 
 .project-link:hover {
-    background-color: #666;
+    background-color: #444;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Responsive adjustments for smaller screens */
-@media (max-width: 768px) {
-    .projects-container {
-        flex-direction: column;
-        align-items: center; /* Center cards on smaller screens */
-    }
+/* Adding space between the slides */
+.slick-slide {
+    padding-right: 40px; /* Use padding instead of margin */
+    margin-bottom: 20px; /* Add margin to the bottom */
+    box-sizing: border-box; /* Ensure padding doesn't affect width calculation */
+    width: 100%; /* Ensure full-width */
+}
 
-    .project-card {
-        width: 90%; /* Take up most of the width on smaller screens */
-        margin-bottom: 20px; /* Space between cards */
+/* For smaller screens */
+@media (max-width: 1024px) {
+    .slick-slide {
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-slider-container {
+        flex-direction: column;
     }
 }
