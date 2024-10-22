@@ -15,7 +15,7 @@ const ResumePage = () => (
   <div className="resume-page-container">
     <div className="resume-iframe-wrapper">
       <iframe 
-        src="/resume/index.html" 
+        src="https://www.avivarma.ca/resume/" 
         title="Avi Varma Resume" 
         className="resume-iframe"
       />
@@ -27,7 +27,7 @@ const MalariaInferencePage = () => (
   <div className="malaria-inference-page-container">
     <div className="malaria-iframe-wrapper">
       <iframe 
-        src="/malaria-inference-frontend/index.html" 
+        src="https://www.avivarma.ca/malaria-inference-frontend/" 
         title="Malaria Inference" 
         className="malaria-iframe"
       />
@@ -45,7 +45,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/openai-test" element={<OpenAITestPage />} />
             <Route path="/resume" element={<ResumePage />} />
-            <Route path="/malaria-inference" element={<MalariaInferencePage />} />
+            <Route path="/malaria-inference-frontend" element={<MalariaInferencePage />} />
             {/* Catch-all route for 404 */}
             <Route path="*" element={<NotFound />} />
           </Routes>
