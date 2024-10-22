@@ -142,7 +142,7 @@
 /* Status orb for API status */
 .status-orb {
     position: fixed;
-    top: 8rem;
+    top: 1rem;
     right: 1rem;
     width: 25px;
     height: 25px;
