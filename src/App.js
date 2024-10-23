@@ -8,7 +8,6 @@ import Projects from './components/Projects.jsx';
 import Experience from './components/Experience.jsx';
 import Education from './components/Education.jsx';
 import Contact from './components/Contact.jsx';
-import OpenAITestPage from './OpenAITestPage.jsx';
 import NotFound from './components/NotFound.jsx'; // Import NotFound component
 
 const ResumePage = () => (
@@ -35,6 +34,18 @@ const MalariaInferencePage = () => (
   </div>
 );
 
+const OpenAITest = () => (
+  <div className="openai-inference-page-container">
+    <div className="openai-iframe-wrapper">
+      <iframe 
+        src="https://www.avivarma.ca/openaifrontend/" 
+        title="openai Inference" 
+        className="openai-iframe"
+      />
+    </div>
+  </div>
+);
+
 function App() {
   return (
     <Router>
@@ -43,7 +54,7 @@ function App() {
         <div className="content"> {/* Flexbox container for content */}
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/openai-test" element={<OpenAITestPage />} />
+            <Route path="/openai-test" element={<OpenAITest />} />
             <Route path="/resume" element={<ResumePage />} />
             <Route path="/malaria-inference-frontend" element={<MalariaInferencePage />} />
             {/* Catch-all route for 404 */}
