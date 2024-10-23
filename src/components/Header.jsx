@@ -80,7 +80,7 @@ const Header = () => {
               <Link to="/resume" onClick={() => setIsMobileMenuOpen(false)}>Resume</Link>
             </li>
             <li className={location.pathname === '/openaifrontend' ? 'active' : ''}>
-              <Link to="/openaifrontend" onClick={() => setIsMobileMenuOpen(false)}>OpenAI Test</Link>
+              <Link to="/openaifrontend" onClick={() => setIsMobileMenuOpen(false)}>Chat</Link>
             </li>
             <li className={location.pathname === '/malaria-inference-frontend' ? 'active' : ''}>
               <Link to="/malaria-inference-frontend" onClick={() => setIsMobileMenuOpen(false)}>Malaria Inference</Link>
