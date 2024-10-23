@@ -54,7 +54,7 @@ function App() {
         <div className="content"> {/* Flexbox container for content */}
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/openai-test" element={<OpenAITest />} />
+            <Route path="/openaifrontend" element={<OpenAITest />} />
             <Route path="/resume" element={<ResumePage />} />
             <Route path="/malaria-inference-frontend" element={<MalariaInferencePage />} />
             {/* Catch-all route for 404 */}
