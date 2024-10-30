@@ -35,9 +35,11 @@ const Header = () => {
   return (
     <header className="header glassy">
       <div className="header-content">
-        <div className="logo">
+      <div className="logo">
+        <Link to="/">
           <img src="logo512.png" alt="Logo" />
-        </div>
+        </Link>
+      </div>
 
         <button
           className="mobile-menu-toggle"

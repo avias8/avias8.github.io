@@ -169,7 +169,7 @@ const Education = () => {
 
     return (
         <section id="education">
-            <h2>Education</h2>
+            <h2 className='education-title'>Education</h2>
             <div className="education-container">
                 {educationData.map((edu, index) => (
                     <div key={index} className="education-card" onClick={() => openModal(edu)}>
