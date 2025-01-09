@@ -9,6 +9,7 @@ import Experience from './components/Experience.jsx';
 import Education from './components/Education.jsx';
 import Contact from './components/Contact.jsx';
 import NotFound from './components/NotFound.jsx'; // Import NotFound component
+import RedirectLinkedIn from './components/RedirectLinkedIn.jsx'; // <-- Import our redirect component
 
 const ResumePage = () => (
   <div className="resume-page-container">
@@ -57,6 +58,10 @@ function App() {
             <Route path="/openaifrontend" element={<OpenAITest />} />
             <Route path="/resume" element={<ResumePage />} />
             <Route path="/malaria-inference-frontend" element={<MalariaInferencePage />} />
+
+            {/* New redirect route for LinkedIn */}
+            <Route path="/linkedin" element={<RedirectLinkedIn />} />
+
             {/* Catch-all route for 404 */}
             <Route path="*" element={<NotFound />} />
           </Routes>
