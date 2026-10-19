@@ -257,6 +257,7 @@
   </div>
 </section>
 </main>
-<script>document.querySelectorAll('nav a').forEach(a=>a.onclick=()=>m.checked=false)</script>
+<!-- The handler must not return false: that would cancel the navigation -->
+<script>document.querySelectorAll('nav a').forEach(a=>a.onclick=()=>{m.checked=false})</script>
 </body>
 </html>
