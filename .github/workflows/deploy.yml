@@ -1,0 +1,23 @@
+# Builds the site from this branch and publishes build/ to main, which GitHub Pages serves.
+# The build fails if a page is over the first-round-trip budget, so an oversized page never ships.
+name: Deploy
+on:
+  push:
+    branches: [source]
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node build.mjs
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: main
+          publish_dir: build
